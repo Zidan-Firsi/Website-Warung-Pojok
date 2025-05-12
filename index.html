@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Warung Pojok</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  
+  html {
+  scroll-behavior: smooth;
+}
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #fff;
+    }
+
+    header {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* jarak antara logo dan menu */
+}
+
+header img {
+  height: 50px;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+
+    .hero {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 35.7%;
+  background: rgba(0, 0, 0, 0.382); /* lebih gelap agar teks lebih terbaca */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  }
+
+  .overlay img {
+  max-width: 35%;
+  height: auto;
+  margin-bottom: 15px;
+  }
+
+  .overlay p {
+  font-size: 17px;
+  line-height: 1.75;
+  }
+
+
+    h2 {
+      text-align: center;
+      margin: 40px 0 20px;
+    }
+
+    .menu-title {
+    text-align: center;
+    font-weight: 400; /* pertipis */
+    font-size: 22px;  /* perkecil */
+    margin: 55px 0 55px; /* Tambah jarak dari atas dan bawah */
+  }
+
+  .menu-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom di desktop */
+    gap: 60px 0px; /* ⬅️ vertikal 60px (lebih lebar), horizontal 20px (lebih sempit) */
+    justify-items: center;
+    padding: 0 40px 30px;
+  }
+
+  @media (max-width: 1024px) {
+    .menu-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .menu-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .menu-item {
+    text-align: center;
+  }
+
+  .menu-item img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .menu-item p {
+    font-size: 16px;
+    margin: 0;
+  }
+
+.voucher-section {
+  padding: 0px 60px 275px 60px;
+  text-align: center;
+  background-color: #fefefe;
+}
+
+.voucher-section h2 {
+  font-size: 21px;
+  font-weight: 400;
+  margin-bottom: 55px;
+  color: #000;
+}
+
+.voucher-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.voucher-card {
+  border: 1px solid #bbb; /* border keempat sisi */
+  border-radius: 12px;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+
+
+}
+
+.voucher-text {
+  padding: 20px;
+  text-align: left; /* teks isi voucher rata kiri */
+}
+
+.voucher-text h3 {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 8px;
+  color: #000;
+}
+
+.voucher-text p {
+  font-size: 14px;
+  margin: 0;
+  color: #333;
+}
+
+.voucher-card button {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+  border-radius: 0 0 12px 12px;
+  background-color: #333;
+  color: white;
+  font-weight: normal;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: center;
+}
+
+.voucher-card button:hover {
+  background-color: #27ae60;
+}
+
+.voucher-card button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+
+    .footer {
+  background-color: #f0f0f0;
+  padding: 30px 100px; /* margin kiri-kanan besar */
+  display: flex;
+  justify-content: space-between;
+  gap: 40px; /* jarak antar kolom */
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-logo img {
+  height: 65px;
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+  <div class="header-left">
+    <img src="logo-warungpojok.png" alt="Logo Warung Pojok">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="profil.html">Profil</a>
+      <a href="#menu">Menu</a>
+      <a href="#kontak">Contact</a>
+	  <a href="#voucher">Voucher</a>
+    </nav>
+  </div>
+</header>
+
+
+  <div class="hero">
+    <img src="hero.jpg" alt="Header Warung Pojok">
+    <div class="overlay">
+      <img src="logo-warungpojok2.png" alt="Logo Overlay">
+      <p>menyediakan berbagai kuliner<br>khas Kota Cirebon</p>
+    </div>
+  </div>
+
+  <h2 id="menu" class="menu-title">Menu</h2>
+
+<div class="menu-container">
+  <div class="menu-item">
+    <a href="nasi-jamblang.html"><img src="nasi-jamblang.jpg" alt="Nasi Jamblang"></a>
+    <p>Nasi Jamblang</p>
+  </div>
+  <div class="menu-item">
+    <a href="tahu-gejrot.html"><img src="tahu-gejrot.jpg" alt="Tahu Gejrot"></a>
+    <p>Tahu Gejrot</p>
+  </div>
+  <div class="menu-item">
+    <a href="nasi-lengko.html"><img src="nasi-lengko.jpg" alt="Nasi Lengko"></a>
+    <p>Nasi Lengko</p>
+  </div>
+  <div class="menu-item">
+    <a href="empal-gentong.html"><img src="empal-gentong.jpg" alt="Empal Gentong"></a>
+    <p>Empal Gentong</p>
+  </div>
+  <div class="menu-item">
+    <a href="ketoprak.html"><img src="ketoprak.jpg" alt="Ketoprak"></a>
+    <p>Ketoprak</p>
+  </div>
+  <div class="menu-item">
+    <a href="lontong-sayur.html"><img src="lontong-sayur.jpg" alt="Lontong Sayur"></a>
+    <p>Lontong Sayur</p>
+  </div>
+  <div class="menu-item">
+    <a href="docang.html"><img src="docang.jpg" alt="Docang"></a>
+    <p>Docang</p>
+  </div>
+  <div class="menu-item">
+    <a href="mi-koclok.html"><img src="mi-koclok.jpg" alt="Mi Koclok"></a>
+    <p>Mi Koclok</p>
+  </div>
+</div>
+
+<!-- Voucher Promo -->
+<div id="voucher" class="voucher-section">
+  <h2>Voucher</h2>
+  <div class="voucher-grid">
+    <div class="voucher-card">
+      <div class="voucher-text">
+        <h3>Voucher Diskon 90% s/d 5RB</h3>
+        <p>Berlaku s.d. 30 Mei 2025</p>
+      </div>
+      <button onclick="klaim(this, 'voucher1')">Klaim</button>
+    </div>
+    <div class="voucher-card">
+      <div class="voucher-text">
+        <h3>Voucher Diskon 15% s/d 50RB</h3>
+        <p>Berlaku s.d. 15 Mei 2025</p>
+      </div>
+      <button onclick="klaim(this, 'voucher2')">Klaim</button>
+    </div>
+    <div class="voucher-card">
+      <div class="voucher-text">
+        <h3>Voucher Diskon 60% s/d 15RB</h3>
+        <p>Berlaku hanya untuk hari ini</p>
+      </div>
+      <button onclick="klaim(this, 'voucher3')">Klaim</button>
+    </div>
+    <div class="voucher-card">
+      <div class="voucher-text">
+        <h3>Voucher Diskon 99% s/d 2RB</h3>
+        <p>Berlaku s.d. 31 Desember 2025</p>
+      </div>
+      <button onclick="klaim(this, 'voucher4')">Klaim</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function klaim(button) {
+    button.innerText = "Diklaim";
+    button.disabled = true;
+  }
+</script>
+
+
+
+  <div id="kontak" class="footer">
+    <div class="footer-section footer-logo">
+      <img src="logo-warungpojok.png" alt="Logo Footer">
+      <p>Address:<br>Jl. Demokrasi no.45,<br>Kedawung, Cirebon, Jawa Barat</p>
+    </div>
+    <div class="footer-section">
+      <p>Contact Us:<br><br>Email: warungpojok@gmail.com<br>Phone:<br>082128122433<br>081292185106</p>
+    </div>
+    <div class="footer-section">
+  <p>Follow Us:</p>
+  <a href="https://www.instagram.com" target="_blank">
+    <img src="instagram.png" alt="Instagram" style="height: 27px; margin-right: 10px;">
+  </a>
+  <a href="https://www.facebook.com" target="_blank">
+    <img src="facebook.png" alt="Facebook" style="height: 27px;">
+  </a>
+</div>
+  </div>
+
+<script>
+  function klaim(button, id) {
+    button.innerText = "Diklaim";
+    button.disabled = true;
+    localStorage.setItem(id, "claimed");
+  }
+
+  window.onload = function() {
+    const vouchers = ["voucher1", "voucher2", "voucher3", "voucher4"];
+    vouchers.forEach(id => {
+      const status = localStorage.getItem(id);
+      if (status === "claimed") {
+        const button = document.querySelector(`button[onclick*="${id}"]`);
+        if (button) {
+          button.innerText = "Diklaim";
+          button.disabled = true;
+        }
+      }
+    });
+  };
+</script>
+
+
+</body>
+</html>

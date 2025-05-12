@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Koclok - Warung Pojok</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+
+    header {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* jarak antara logo dan menu */
+}
+
+header img {
+  height: 50px;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+
+
+    .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 60px;
+  gap: 40px;
+}
+
+
+
+    .container img {
+      max-width: 400px;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .deskripsi {
+      max-width: 500px;
+    }
+
+    .deskripsi h1 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    .deskripsi p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .btn-pesan {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+   <div class="header-left">
+    <img src="logo-warungpojok.png" alt="Logo Warung Pojok">
+    <nav>
+      <a href="index.html">Home</a>
+	  <a href="profil.html">Profil</a>
+      <a href="index.html#menu">Menu</a>
+      <a href="index.html#kontak">Contact</a>
+	  <a href="index.html#voucher">Voucher</a>
+    </nav>
+  </div>
+</header>
+
+
+  <div class="container">
+    <img src="crop-mi-koclok.jpg" alt="Mi Koclok">
+    <div class="deskripsi">
+      <h1>Mi Koclok</h1>
+      <p>
+        Mi koclok memiliki kuah kental berwarna putih seperti bubur, terbuat dari kaldu ayam dan santan, yang digumpalkan dengan pati jagung atau tapioka. Mi koclok juga dilengkapi dengan berbagai pelengkap seperti suwiran ayam, telur rebus, tauge, dan bawang goreng. 
+      </p>
+      <a class="btn-pesan" href="#">Buat Pesanan</a>
+    </div>
+  </div>
+
+</body>
+</html>
